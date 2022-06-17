@@ -22,6 +22,9 @@ function App() {
     setLight(!light);
   };
 
+  const handleLight = () => {
+    setLight(!light);
+  };
   //Argumento 1: Callback
   //Argumento 2: nada, [], [count]
   //Caso vacío: el call back del useEffect se ejecuta cada que algo cambie (estado)
@@ -38,9 +41,14 @@ function App() {
         <button onClick={() => handleClick(true)}>Click me to add</button>
         <button onClick={() => handleClick(false)}>Click me to reduce</button>
 
-
-    
-        <div className={light === true ? "on" : "off"}>{light === true ? "on" : "off"}</div>
+        <div
+          className={light === true ? "on" : "off"}
+          onMouseOver={() => {
+            handleLight();
+          }}
+        >
+          {light === true ? "on" : "off"}
+        </div>
       </header>
     </div>
   );
