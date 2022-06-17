@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 
 //Components
 import Title from "./components/Title";
-
 import logo from "./logo.svg";
 import "./App.css";
 
@@ -21,7 +20,6 @@ function App() {
     }
     setCount(newCount);
     setLight(!light);
-    
   };
 
   //Argumento 1: Callback
@@ -29,9 +27,7 @@ function App() {
   //Caso vacío: el call back del useEffect se ejecuta cada que algo cambie (estado)
   //Caso []: el callback del useEffect se ejecuta la primera vez que carga el componente
   //Caso [count]: el callback del useEffect se ejecuta la primera vez el estado se actualiza
-  useEffect( () =>{
-    
-  })
+  useEffect(() => {});
 
   return (
     <div className="App">
@@ -42,7 +38,9 @@ function App() {
         <button onClick={() => handleClick(true)}>Click me to add</button>
         <button onClick={() => handleClick(false)}>Click me to reduce</button>
 
-        <div className={light === true ? "on": "off"}>Off</div>
+
+    
+        <div className={light === true ? "on" : "off"}>{light === true ? "on" : "off"}</div>
       </header>
     </div>
   );
