@@ -25,6 +25,10 @@ function App() {
   const handleLight = () => {
     setLight(!light);
   };
+  const handleLight2 = () => {
+    setLight(!light);
+  };
+
   //Argumento 1: Callback
   //Argumento 2: nada, [], [count]
   //Caso vacío: el call back del useEffect se ejecuta cada que algo cambie (estado)
@@ -45,6 +49,9 @@ function App() {
           className={light === true ? "on" : "off"}
           onMouseOver={() => {
             handleLight();
+          }}
+          onMouseLeave={() => {
+            handleLight2();
           }}
         >
           {light === true ? "on" : "off"}
