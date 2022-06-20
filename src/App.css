@@ -37,8 +37,6 @@
   }
 }
 
-
-
 .on{
   width: 100px;
   height: 100px;
@@ -57,4 +55,69 @@
   justify-content: center;
   background-color: blue;
   color:yellow
+}
+
+.koderUl{
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.koderUiLi{
+  border: 3px solid rgb(255, 47, 0);
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  height: 15vh;
+  margin-top: 5px;
+}
+
+.avatarDiv{
+  width: 20%;
+  height: 100%;
+  background-color: #001115;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatarImg{
+  width: 4rem;
+  height: 4rem;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 50%;
+  background-color: #d0ff00;
+
+}
+
+.koderInfo{
+  width: 80%;
+  height: 100%;
+  background-color: #03001d;
+  color: rgb(255, 255, 255);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.koderInfoCentered{
+  background-color: rgba(255, 68, 0, 0.503);
+  width: 70%;
+}
+
+.koderInfoCentered{
+  background-color: rgb(2, 158, 163);
+  width: 80%;
+}
+
+.kimage{
+  width: 25%;
+  height: 100%;
+  border-radius: 50%;
+  margin-right: 1rem;
 }
