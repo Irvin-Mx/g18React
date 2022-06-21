@@ -78,7 +78,7 @@
 .avatarDiv{
   width: 20%;
   height: 100%;
-  background-color: #001115;
+  background-color:  #03001d;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -87,9 +87,10 @@
 .avatarImg{
   width: 4rem;
   height: 4rem;
-  border: 2px solid rgb(0, 0, 0);
+  border: 2px solid  #03001d;
   border-radius: 50%;
   background-color: #d0ff00;
+  
 
 }
 

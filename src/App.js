@@ -51,7 +51,9 @@ function App() {
   const koderUi = koders.map((koder, index) => (
     <div className="koderUiLi" key={index}>
       <div className="avatarDiv">
-        <div className="avatarImg"></div>
+        <div className="avatarImg">
+          <img alt="koderIcon" src={koder.photoURL} />
+        </div>
       </div>
 
       <div className="koderInfo">
