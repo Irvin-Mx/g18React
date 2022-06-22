@@ -2,7 +2,7 @@
 import Card from "./components/Card";
 
 import "./App.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const [firstName, setFirstName] = useState("");
@@ -11,7 +11,8 @@ function App() {
   const [gender, setGender] = useState("");
   const [photoURL, setPhotoURL] = useState("");
 
-  const [mxn, setMxn] = useState(0)
+  const [mxn, setMxn] = useState(0);
+  const [usd, setUsd] = useState(0);
 
   const [koders, setKoders] = useState([
     {
@@ -97,12 +98,24 @@ function App() {
         <button type="submit">Agregar Koder</button>
       </form>
       <h1>
-      {isNaN(   (mxn*18).toFixed(2)    ) ? "Numbers only please" : (mxn*18).toFixed(2)}
+        {isNaN((mxn * 20.19).toFixed(2))
+          ? "Numbers only please"
+          : (mxn * 20.19).toFixed(2)}
       </h1>
       <input
-          value={mxn}
-          onChange={(event) => setMxn(event.target.value) }
-        />
+        value={mxn}
+        onChange={(event) => {
+          setMxn(event.target.value);
+          setUsd(event.target.value * 20.19);
+        }}
+      />
+      <input
+        value={usd}
+        onChange={(event) => {
+          setUsd(event.target.value);
+          setMxn(event.target.value / 20);
+        }}
+      />
     </div>
   );
 }
