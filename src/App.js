@@ -101,7 +101,7 @@ function App() {
       </h1>
       <input
           value={mxn}
-          onChange={(event) => setMxn(event.target.value)}
+          onChange={(event) => setMxn(event.target.value) }
         />
     </div>
   );
