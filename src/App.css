@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: #b1b1b1;
+  background-color: #242424;
 }
 
 .App-logo {
@@ -91,4 +91,10 @@ button:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.creditCardContainer{
+  width: 26%;
+  height: 190px;
+  border-radius: 12px;
 }

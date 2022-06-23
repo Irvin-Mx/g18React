@@ -11,8 +11,13 @@ function App() {
   const [gender, setGender] = useState("");
   const [photoURL, setPhotoURL] = useState("");
 
-  const [mxn, setMxn] = useState(0);
-  const [usd, setUsd] = useState(0);
+  const [mxn, setMxn] = useState(null);
+  const [usd, setUsd] = useState(null);
+
+  const [ccNumber, setCcNumber] = useState(null);
+  const [ccOwner, setCcOwner] = useState(null);
+  const [ccValidDate, setccValidDate] = useState(null);
+  const [ccCvv, setccCvv] = useState(null);
 
   const [koders, setKoders] = useState([
     {
@@ -97,12 +102,14 @@ function App() {
         />
         <button type="submit">Agregar Koder</button>
       </form>
+
       <h1>
         {isNaN((mxn * 20.19).toFixed(2))
           ? "Numbers only please"
-          : (mxn * 20.19).toFixed(2)}
+          : ` ${(mxn * 20.19).toFixed(2)} Mxn`}
       </h1>
       <input
+        placeholder="Usd"
         value={mxn}
         onChange={(event) => {
           setMxn(event.target.value);
@@ -110,12 +117,86 @@ function App() {
         }}
       />
       <input
+        placeholder="Mxn"
         value={usd}
         onChange={(event) => {
           setUsd(event.target.value);
-          setMxn(event.target.value / 20);
+          setMxn(event.target.value / 20.19);
         }}
       />
+
+      {/* Ejercicio: Credit card */}
+      <div className="flex items-center w-full bg-slate-900 ">
+        <div className="creditCardContainer bg-gradient-to-r from-cyan-500 to-blue-500 rounded flex flex-row justify-center m-5">
+          <div className="flex flex-col justify-center w-11/12 h-100  items-center">
+            <div className="flex items-center w-full justify-center h-1/3 ">
+              <div className="flex w-full justify-between ">
+                <img alt="chipImg" src="" />
+                <p className="font-mono text-2xl font-bold text-white">Visa</p>
+              </div>
+            </div>
+
+            <div className="flex w-full justify-center items-center h-1/3 ">
+              <p className="ccNumberInfo   text-3xl underlinefont-extralight text-white w-full">
+                {ccNumber}
+              </p>
+            </div>
+
+            <div className="flex w-full  items-center justify-between h-1/3 ">
+              <p className="ccOwnerInfo  text-white">{ccOwner}</p>
+              <p className="ccValidThru  text-white">{ccValidDate}</p>
+              <p className="ccValidThru  text-white">{ccCvv}</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Labels and inputs container/START */}
+
+        <div className=" flex flex-col creditCardInfo">
+          <div>
+            <label className="text-stone-400">Credit card number: </label>
+            <input
+              placeholder="Credit card number here"
+              value={ccNumber}
+              onChange={(event) => {
+                setCcNumber(event.target.value);
+              }}
+            />
+          </div>
+          <div>
+            <label className="text-stone-400">Credit card owner: </label>
+            <input
+              placeholder="Credit card owner name here"
+              value={ccOwner}
+              onChange={(event) => {
+                setCcOwner(event.target.value);
+              }}
+            />
+          </div>
+          <div>
+            <label className="text-stone-400">Valid thru date: </label>
+            <input
+              placeholder="Credit card valid thrue date"
+              value={ccValidDate}
+              onChange={(event) => {
+                setccValidDate(event.target.value);
+              }}
+            />
+          </div>
+          <div>
+            <label className="text-stone-400">CVC : </label>
+            <input
+              placeholder="Credit card CVC"
+              value={ccCvv}
+              onChange={(event) => {
+                setccCvv(event.target.value);
+              }}
+            />
+          </div>
+        </div>
+
+        {/* Labels and inputs container/START */}
+      </div>
     </div>
   );
 }
