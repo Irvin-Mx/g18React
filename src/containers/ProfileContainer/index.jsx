@@ -1,13 +1,18 @@
 import { Outlet, Link } from "react-router-dom";
-// import "./AppContainer.css";
+
+// CSS
+import "./ProfileContainer.css";
 
 export default function ProfileContainer() {
   return (
-    <div>
-      <nav>
-        <Link to="">Details</Link>
-        <Link to="">Edit</Link>
-      </nav>
+    <div className="Profile-container">
+      <h1>Profile</h1>
+      <div className="Profile-nav">
+        <nav>
+          <Link to="">Detalle</Link>
+          <Link to="edit">Edit</Link>
+        </nav>
+      </div>
       <Outlet />
     </div>
   );

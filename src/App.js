@@ -1,27 +1,19 @@
-import { Routes, Route, Link } from "react-router-dom";
-
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
+
+// Containers
 import AppContainer from "./containers/AppContainer";
 import ProfileContainer from "./containers/ProfileContainer";
 
-import Home from "./pages/Home";
+// Components
 import About from "./pages/About";
-import Profile from "./pages/Profile";
+import Home from "./pages/Home";
+import ProfileDetail from "./pages/Profile/Detail";
+import ProfileEdit from "./pages/Profile/Edit";
 
 function App() {
   return (
     <div className="App">
-      <div className="flex bg-slate-900 text-white text-xl ">
-        <Link className="p-3" to="/">
-          Home
-        </Link>
-        <Link className="p-3" to="/about">
-          About
-        </Link>
-        <Link className="p-3" to="/profile">
-          About
-        </Link>
-      </div>
       <Routes>
         <Route path="/" element={<p>Landing page</p>} />
         <Route path="login" element={<p>Login</p>} />
@@ -30,9 +22,8 @@ function App() {
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="profile" element={<ProfileContainer />}>
-            <Route index element={<h1>Here is where you can view your profile and edit it </h1>} />
-            <Route path="edit" element={<h1>You can edit your profile</h1>} />
-            <Route path="view" element={<h1>You can edit your profile </h1>} />
+            <Route index element={<ProfileDetail />} />
+            <Route path="edit" element={<ProfileEdit />} />
           </Route>
         </Route>
       </Routes>
