@@ -22,7 +22,8 @@ function App() {
         <Route path="app" element={<AppContainer />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
-          <Route path="profile" element={<ProfileContainer />}>
+          <Route path="profiles" element={<ProfileContainer />}>
+            <Route index element={<ProfileContainer />} />
             <Route path=":id" element={<ProfileDetail />} />
             <Route path="edit" element={<ProfileEdit />} />
             <Route path="edit/:id" element={<ProfileEdit />} />
