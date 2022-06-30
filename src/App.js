@@ -10,6 +10,7 @@ import About from "./pages/About";
 import Home from "./pages/Home";
 import ProfileDetail from "./pages/Profile/Detail";
 import ProfileEdit from "./pages/Profile/Edit";
+import ProfileCreate from "./pages/Profile/Create";
 
 function App() {
   return (
@@ -22,8 +23,10 @@ function App() {
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="profile" element={<ProfileContainer />}>
-            <Route index element={<ProfileDetail />} />
+            <Route path=":id" element={<ProfileDetail />} />
             <Route path="edit" element={<ProfileEdit />} />
+            <Route path="edit/:id" element={<ProfileEdit />} />
+            <Route path="create" element={<ProfileCreate />} />
           </Route>
         </Route>
       </Routes>

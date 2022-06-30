@@ -11,6 +11,7 @@ export default function ProfileContainer() {
         <nav>
           <Link to="">Detalle</Link>
           <Link to="edit">Edit</Link>
+          <Link to="create">Create</Link>
         </nav>
       </div>
       <Outlet />

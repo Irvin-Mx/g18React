@@ -11,7 +11,7 @@ import "./Home.css";
 export default function Home() {
   const [characters, setCharacters] = useState([]);
 
-  // // REQUEST A Rick and Morty API.
+  // REQUEST A Rick and Morty API.
   useEffect(() => {
     const getCharactersQuery = async () => {
       const data = await getCharacters();
@@ -27,27 +27,7 @@ export default function Home() {
       <div className="img-container">
         <img src={image} alt="character" />
       </div>
-
       <CharacterInfo name={name} status={status} species={species} location={origin.name}/>
-
-      {/* <div className="info-div">
-        <p>
-          <span className="info-div-Name">Name: </span>
-          {item.name}
-        </p>
-        <p>
-          <span className="info-div-Name">Status: </span>
-          {item.status}
-        </p>
-        <p>
-          <span className="info-div-Name">Species: </span>
-          {item.species}
-        </p>
-        <p>
-          <span className="info-div-Name">Origin: </span>
-          {item.location.name}
-        </p>
-      </div> */}
     </div>
   ));
 
